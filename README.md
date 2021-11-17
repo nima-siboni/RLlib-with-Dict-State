@@ -12,7 +12,7 @@ In light of these developments, you might want to try RL for solving your challe
 easily extendable use case is explained which could serve as a blueprint for your project. 
 
 # Main ingredients of your RL-project
-As deep-RL practitioner, you need:
+As deep-RL practitioner, the following three items are of the essentials in your project:
 
 * an agent, which has one or many neural network to make decisions,
 * an environment with which the agent can interact, and
@@ -26,17 +26,21 @@ should know which one would be a better method for your problem at hand. After c
 find the efficient/stable implementation of you algorithm in one the existing RL libraries.
 
 There are [many of these libraries](https://neptune.ai/blog/the-best-tools-for-reinforcement-learning-in-python),
-and we choose [RLlib](https://docs.ray.io/en/master/rllib.html) which is one of the prominent libraries for scalable RL,
-both in academia and industry. So far so good, a high quality algorithm is ready to use for training your agent. Easy!
+and here for the purpose of this tutorial we choose [RLlib](https://docs.ray.io/en/master/rllib.html). RLlib is one of the prominent libraries for scalable RL,
+both in academia and industry, and has many of the state of art RL-algorihtm implemented. 
+
+So far so good, a high quality algorithm is ready to use for training your agent. Easy!
 
 ## Environtment
 The environment is very specific to your problem and this is the part which should be implemented by you or your team.
-Your domain expertise goes into designing states, actions and most importantly the rewards. In this tutorial, we rewrite
+Your domain expertise goes into designing states, actions, and most importantly the rewards. In this tutorial, we rewrite
  an OpenAI Gym environment, i.e. ```CartPole``` , with a modification: for the state, our custom environment returns a dictionary 
- instead of a numpy array. This gives us the opportunity to:
+ instead of a numpy array. Without getting into a full implementation of an environment, the proposed modification enables us to:
 
 * create and register a custom environment,
-* create custom models for handling dictionaries within RLlib.
+* create custom models for handling dictionaries within RLlib, 
+
+which are XS
 
 ### Why states with dictionary?
 
