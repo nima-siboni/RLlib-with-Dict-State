@@ -1,6 +1,6 @@
 # RLlib-with-Dict-State
 A minimal example demonstrating the use of RLlib with states which are presented as dictionaries. 
-
+![](statics/RLlib_with_dict.png)
 # Why this tutorial?
 
 Despite of
