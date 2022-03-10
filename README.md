@@ -37,7 +37,7 @@ RL-algorithm implemented.
 
 So far so good! A high-quality algorithm is ready to be used for training your agents. Easy!
 
-## Environtment
+## Environment
 The environment is very specific to your problem and this is the part which is commonly implemented by you or your team.
 Your domain expertise goes into designing states, actions, and most importantly the rewards. As an environment,
 in this tutorial, we rewrite an OpenAI Gym environment, i.e. ```CartPole``` , with a slight modification: for the
@@ -138,7 +138,9 @@ With the custom model and the custom environment, we are ready to start our trai
 
 * initialize ```ray``` with
 
-```python ray.init()```
+```python
+ ray.init()
+```
 
 * Register the custom model by ```register_custom_model``` method, and add it as ```custom_model``` to the training 
 config: 
