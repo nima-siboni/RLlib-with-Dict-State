@@ -71,7 +71,8 @@ tutorial.
 
 First, we create a custom environment based on ```CartPole``` environment of OpenAI Gym, such that the state is a 
 dictionary. Then an appropriate custom model is created such that it can get the state without flattening its content. 
-Finally, we set up training and the test for the current setup.
+Finally, we set up training and the test for the current setup. The implemented environment can be found in 
+```cart_pole_with_dict.py``` in the ```environments``` folder.
 
 ## Custom environment
 The state in the original implementation of the environment is _one_ ```Tuple``` with 4 elements:
@@ -117,6 +118,8 @@ DQN, we need to implement:
 * ```__init__```, and 
 * ```forward```. 
 
+The implemented model can be found in ```keras_model.py``` in the ```model``` folder.
+
 ### ```__init__``` method
 In ```__init__``` method, the network is built using the _original_ observation space. Here, the original observation 
 space is a term used in RLlib package referring to the state before being flattened. In other words, the original 
@@ -134,7 +137,8 @@ section.
 
 ## Training of the custom agent in the custom model
 
-With the custom model and the custom environment, we are ready to start our training!
+With the custom model and the custom environment, we are ready to start our training! The training script which is 
+explained below can be found in ```experience_and_learn.py``` in the project root folder.
 
 * initialize ```ray``` with
 
