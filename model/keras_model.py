@@ -7,15 +7,14 @@ from ray.rllib.policy.sample_batch import SampleBatch
 
 class KerasQModel(TFModelV2):
     """Custom model for DQN."""
-    def __init__(self, obs_space, action_space, num_outputs, model_config,
-                 name):
-        super(KerasQModel, self).__init__(
-            obs_space, action_space, num_outputs, model_config, name)
-        self.original_space = obs_space.original_space if hasattr(obs_space, "original_space") else obs_space
-        self.cart = tf.keras.layers.Input(shape=self.original_space['cart'].shape, name="cart")
-        self.pole = tf.keras.layers.Input(shape=self.original_space['pole'].shape, name="pole")
+    def __init__(self, obs_space, action_space, num_outputs, model_config, name):
+        super(KerasQModel, self).__init__(obs_space, action_space, num_outputs, model_config, name)
+        original_space = obs_space.original_space if hasattr(obs_space, "original_space") else obs_space
+        self.cart = tf.keras.layers.Input(shape=original_space['cart'].shape, name="cart")
+        self.pole = tf.keras.layers.Input(shape=original_space['pole'].shape, name="pole")
 
-        # Concatenating the inputs
+        # Concatenating the inputs;
+        # One can pass different parts of the state to different networks before concatenation.
         concatenated = tf.keras.layers.Concatenate()([self.cart, self.pole])
 
         # Building the dense layers

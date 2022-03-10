@@ -1,5 +1,4 @@
 from typing import Dict
-
 import gym
 """
 Classic OpenAI's Gym cart-pole system adapted for using the Dicts 
@@ -88,7 +87,6 @@ class CartPoleWithDict(gym.Env):
         )
         Inf = np.finfo(np.float32).max
         self.action_space = spaces.Discrete(2)
-        self.observation_space = spaces.Box(-high, high, dtype=np.float32)
         self.observation_space = spaces.Dict(
             {'cart': spaces.Box(low=np.array([-4.800, -Inf]), high=np.array([4.800, Inf]), shape=(2,), dtype=np.float),
              'pole': spaces.Box(low=np.array([-0.418, -Inf]), high=np.array([0.418, Inf]), shape=(2,), dtype=np.float)
