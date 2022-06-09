@@ -16,7 +16,8 @@ config = dqn.DEFAULT_CONFIG.copy()
 config["model"] = {"custom_model": "keras_Q_model", "custom_model_config": {}}
 
 # 1.3 -- Adding the environment config to the main configs
-config["env_config"] = {} # A Dict is expected with the env parameter; in our case env doesn't have any configurations.
+config["env_config"] = {}  # A Dict is expected with the env parameter; in our case env
+# doesn't have any configurations.
 
 # 2 -- Creating the agent
 agent = dqn.DQNTrainer(config=config, env=CartPoleWithDict)
