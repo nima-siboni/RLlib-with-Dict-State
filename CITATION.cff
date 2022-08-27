@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "SIBONI"
+  given-names: "NIMA"
+title: "RLlib-with-Dict-State"
+version: 1.0.0
+date-released: 2022-08-27
+url: "https://github.com/nima-siboni/RLlib-with-Dict-State"
+preferred-citation:
+  type: software
+  authors:
+  - family-names: "SIBONI"
+  - given-names: "NIMA"
